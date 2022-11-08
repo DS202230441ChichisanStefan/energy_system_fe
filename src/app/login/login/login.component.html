@@ -1,0 +1,41 @@
+<h2 class="heading-h1">Welcome to Online Energy Utility Platform</h2>
+<div class="center">
+  <h6>Enter your username</h6>
+  <span class="p-float-label">
+    <input
+      id="float-input"
+      class="block text-900 font-medium mb-2"
+      type="text"
+      pInputText
+      [(ngModel)]="username"
+    />
+  </span>
+
+  <h6>Enter your Password</h6>
+  <p-password
+    class="block text-900 font-medium mb-2"
+    [(ngModel)]="password"
+    [feedback]="false"
+    [toggleMask]="true"
+  ></p-password>
+
+  <button
+    pButton
+    pRipple
+    label="Log In"
+    icon="pi pi-user"
+    class="w-full"
+    style="margin-top: 20px; margin-bottom: 5px;"
+    (click)="loginUser()"
+  ></button>
+
+  <button
+    pButton
+    pRipple
+    label="Register"
+    icon="pi pi-user"
+    class="p-button-outlined w-full"
+    style="margin-top: 5px; margin-bottom: 5px;"
+    (click)="toRegistrationForm()"
+  ></button>
+</div>

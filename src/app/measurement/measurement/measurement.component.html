@@ -1,0 +1,117 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Measurement's System</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <button
+          class="btn btn-outline-success"
+          data-bs-toggle="modal"
+          data-bs-target="#addEmployee"
+          type="submit"
+          (click)="resetForm()"
+        >
+          Add Measurement
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Measurment ID</th>
+        <th scope="col">Timestamp</th>
+        <th scope="col">Energy Consumption</th>
+        <th scope="col">Device ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let measurement of measurementList">
+        <td>{{ measurement.id }}</td>
+        <td>{{ measurement.timestamp | date:'medium' }}</td>
+        <td>{{ measurement.energyConsumption }} kW</td>
+        <td>{{ measurement.device!.id! }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Add employee modal -->
+  <div
+    class="modal fade"
+    id="addEmployee"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add new measurment</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="measurementDetail">
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Energy Consumption
+              </label>
+              <input
+                type="energyConsumption"
+                formControlName="energyConsumption"
+                class="form-control"
+                id="energyConsumption"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"> Device's ID </label>
+              <select
+                [(ngModel)]="selectDevice" class="form-control" [ngModelOptions]="{standalone: true}"
+              >
+                <!-- <option value="ADMIN">ADMIN</option>
+                <option value="CLIENT">CLIENT</option> -->
+                <option *ngFor="let deviceos of deviceList" [ngValue]="deviceos">
+                  {{deviceos.id}}
+                </option>
+              </select>
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                (click)="addMeasurement()"
+              >
+                Add measurement
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

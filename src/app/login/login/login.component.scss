@@ -1,0 +1,45 @@
+* {
+  font-family: 'Oxygen', -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica,
+    Arial, sans-serif, “Apple Color Emoji”, “Segoe UI Emoji”, “Segoe UI Symbol”;
+}
+
+.heading-h1 {
+  text-align: center;
+  margin-top: 5%;
+  padding-right: 5%;
+  padding-left: 7%;
+  margin-bottom: 2%;
+}
+
+.center {
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.sizes {
+  .p-inputtext {
+    display: block;
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.p-field * {
+  display: block;
+}
+
+.btn-login {
+  margin-right: 10%;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
+.btn-register {
+  display: flex;
+  margin-top: 5%;
+  margin-left: 17%;
+}

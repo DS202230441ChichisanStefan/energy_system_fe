@@ -1,0 +1,40 @@
+<p-messages [(value)]="msgs1" [enableService]="false"></p-messages>
+<h2 class="heading-h1">Registration Form</h2>
+<div class="center">
+  <h6>Enter your username</h6>
+  <span class="p-float-label">
+    <input id="float-input" type="text" pInputText [(ngModel)]="username" />
+  </span>
+
+  <h6>Enter your name</h6>
+  <span class="p-float-label">
+    <input id="float-input" type="text" pInputText [(ngModel)]="name" />
+  </span>
+
+  <h6>Enter your password</h6>
+  <p-password
+    [(ngModel)]="password"
+    [feedback]="false"
+    [toggleMask]="true"
+  ></p-password>
+
+  <button
+    pButton
+    pRipple
+    type="button"
+    label="Sign Up"
+    class="btn-signup"
+    icon="pi pi-user"
+    (click)="signupUser()"
+  ></button>
+
+  <button
+    pButton
+    pRipple
+    type="button"
+    label="Go Back"
+    class="btn-signup"
+    style="margin-left: 25%;"
+    (click)="toLoginComponent()"
+  ></button>
+</div>
