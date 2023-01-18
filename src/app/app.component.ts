@@ -36,6 +36,11 @@ export class AppComponent {
         icon: 'pi pi-book',
         command: () => this.toMeasurementComponent(),
       },
+      {
+        label: 'Chat',
+        icon: 'pi pi-fw pi-users',
+        command: () => this.toChatComponent(),
+      }
     ];
   }
 
@@ -82,5 +87,9 @@ export class AppComponent {
     } else {
       this.router.navigateByUrl('/measurement');
     }
+  }
+
+  toChatComponent() {
+    this.router.navigateByUrl('/chat');
   }
 }

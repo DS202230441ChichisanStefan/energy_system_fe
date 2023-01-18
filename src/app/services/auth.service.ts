@@ -25,6 +25,7 @@ export class AuthService {
       (user: User) => {
         localStorage.setItem('loggedUserId', user.id + "");
         localStorage.setItem('role', user.role + "");
+        localStorage.setItem('username', user.username + "");
         this.isLoggedIn$.next(true);
       },
       (err: HttpErrorResponse) => {

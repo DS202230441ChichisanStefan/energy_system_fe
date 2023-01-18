@@ -30,6 +30,7 @@ import { ClientComponent } from './client/client/client.component';
 import { DeviceComponent } from './device/device/device.component';
 import { MeasurementComponent } from './measurement/measurement/measurement.component';
 import { ErrprComponent } from './error/errpr/errpr.component';
+import { ChatComponent } from './chat/chat/chat.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -43,7 +44,8 @@ const appRoutes: Routes = [
   { path: 'client', component: ClientComponent },
   { path: 'device', component: DeviceComponent },
   { path: 'measurement', component: MeasurementComponent },
-  { path: 'error', component: ErrprComponent}
+  { path: 'error', component: ErrprComponent },
+  { path: 'chat', component: ChatComponent}
 ];
 
 @NgModule({
@@ -56,6 +58,7 @@ const appRoutes: Routes = [
     DeviceComponent,
     MeasurementComponent,
     ErrprComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
